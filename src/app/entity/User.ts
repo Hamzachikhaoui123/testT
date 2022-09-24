@@ -1,10 +1,21 @@
+
+
 export class User{
+  private _id:number;
   private _nom;
   private _prenom;
   private _nombre_enfants;
 
   get nom() {
     return this._nom;
+  }
+
+  get id(){
+    return this.id;
+  }
+  set id(value){
+    this.id=value
+
   }
 
   set nom(value) {
