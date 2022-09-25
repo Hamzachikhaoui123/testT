@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./config-side-bar.component.css']
 })
 export class ConfigSideBarComponent implements OnInit {
+  public sidebarShow: boolean = false;
 
   constructor() { }
 

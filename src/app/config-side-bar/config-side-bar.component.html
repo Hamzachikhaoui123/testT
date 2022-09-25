@@ -1,13 +1,39 @@
-<nav id="sidebar" class="h-100">
-    <button type="button" id="sidebarCollapse" class="btn btn-info">
-        <i class="fas fa-align-left"></i>
-        <span>Menu</span>
-    </button>
-</nav>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#sidebarCollapse').on('click', function() {
-            $('#sidebar').toggleClass('active');
-        });
-    });
-</script>
+<div class="pos-f-t sidebar-opener" (click)="sidebarShow = !sidebarShow">
+
+    <nav class="navbar navbar-dark ">
+        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+</div>
+
+<div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+    <div class="sidebar-close" (click)="sidebarShow = !sidebarShow">
+        X
+    </div>
+    <div class="sidebar-content">
+        <h1>SideBar</h1>
+        <div class="card">
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="form-label">Name:</label>
+                    <input type="text" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="form-label">prenom:</label>
+                    <input type="text" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput" class="form-label">nombre_enfants:</label>
+                    <input type="number" class="form-control">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

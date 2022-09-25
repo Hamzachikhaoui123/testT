@@ -49,10 +49,7 @@ export class UserCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getList().subscribe((res) => {
-      this.users = res;
-      console.log(this.users);
-    });
+   
   }
 
   add() :void{
@@ -63,6 +60,14 @@ export class UserCardComponent implements OnInit {
     });
     this.closebutton.nativeElement.click();
     alert(`successfully user aad ${this.userForm.controls['nom'].value}`);
+    window.location.reload();
+  }
+
+  getListUser():void{
+    this.userService.getList().subscribe((res) => {
+      this.users = res;
+      console.log(this.users);
+    });
   }
 
   deleteUser(user: User) {

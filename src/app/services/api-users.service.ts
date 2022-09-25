@@ -8,18 +8,19 @@ import { User } from '../entity/User';
 export class ApiUsersService {
 
   constructor(private http:HttpClient) { }
-  // apiUrl="http://localhost:3000/../../../../assets/List-users.json/listUsers"
+  apiUrl="http://localhost:4000/list-users"
 
   getList():Observable<any>{
-    return this.http.get<any>('http://localhost:4000/list-users',{responseType:'json'})
+    return this.http.get<any>(this.apiUrl,{responseType:'json'})
 
   }
 
   add(user:User){
-    return this.http.post('http://localhost:4000/list-users',user)
+    return this.http.post(this.apiUrl,user)
   }
   deleteUser(id:string){
-    return this.http.delete(`http://localhost:4000/list-users/${id}`)
+    return this.http.delete(`${this.apiUrl}/${id}`)
   }
+
   
 }
